@@ -1,9 +1,11 @@
+export const DEFAULT_LIMIT_TIME = 5;
+
 const initialState = {
   isRunning: false,
   isStart: false,
   result: '',
   victoryCondition: 1,
-  limitTime: 10,
+  limitTime: DEFAULT_LIMIT_TIME,
 };
 
 export const ALL_ACTION = 'allAction';
@@ -57,6 +59,12 @@ const gameBoard = (state = initialState, action) => {
       return {
         ...state,
         victoryCondition: action.data.victoryCondition,
+      };
+    }
+    case LIMIT_TIME: {
+      return {
+        ...state,
+        limitTime: action.data.limitTime,
       };
     }
 

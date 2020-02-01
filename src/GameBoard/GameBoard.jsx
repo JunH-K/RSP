@@ -15,11 +15,11 @@ import {
   gameSetsAction,
   initScore,
   initTotalScore,
-  SCORE,
   scoreAction,
   totalScoreAction,
 } from '../reducers/gameStatus';
 import {
+  DEFAULT_LIMIT_TIME,
   limitTimeAction,
   resultAction,
   runningAction,
@@ -54,6 +54,7 @@ const GameBoard = () => {
     dispatch(victoryConditionAction({ victoryCondition: 1 }));
     dispatch(runningAction({ isRunning: false }));
     dispatch(resultAction({ result: '' }));
+    dispatch(limitTimeAction({ limitTime: DEFAULT_LIMIT_TIME }));
   }, []);
 
   useGameStatus({
