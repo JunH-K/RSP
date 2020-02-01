@@ -113,10 +113,7 @@ const GameBoard = () => {
       })
     );
 
-    dispatch({
-      type: SCORE,
-      data: initScore,
-    });
+    dispatch(scoreAction({ score: initScore }));
   }, []);
 
   const onClickSelected = useCallback(
